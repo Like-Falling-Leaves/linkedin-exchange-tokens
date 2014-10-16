@@ -1,0 +1,32 @@
+{
+  "name": "linkedin-exchange-tokens",
+  "version": "0.0.1",
+  "description": "A simple function to convert from LinkedIn JS API Tokens to long-lived OAuth 1.0 tokens",
+  "main": "exchange.js",
+  "dependencies": {
+    "oauth-1.0a": ">=0.1.1",
+    "request": ">=2.45.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/like-falling-leaves/linkedin-exchange-token.git"
+  },
+  "keywords": [
+    "linkedin",
+    "JS",
+    "API",
+    "oauth",
+    "oauth2",
+    "token"
+  ],
+  "readmeFilename": "README.md",
+  "author": "Like Falling Leaves (http://github.com/Like-Falling-Leaves)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/like-falling-leaves/linkedin-exchange-token/issues"
+  }
+}
