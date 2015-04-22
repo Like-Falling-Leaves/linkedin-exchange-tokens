@@ -20,12 +20,19 @@ This module also has a way to make REST API calls to linked in though that can b
 
    var exchangeTokens = require('linkedin-exchange-tokens');
    var options = {
-     'public': 'Your Linked In API Key',
-     'secret': 'Your Linked In API Secret'
+     'linkedinKey': 'Your Linked In API Key',
+     'linkedinSecret': 'Your Linked In API Secret'
    };
 
    // now assume your browser JS code calls the server with its OAuth2 token
    // alternatively, this could be from OAuth2 passportjs flow
+
+   /*
+    * You can get your token easily and with security by following step 1 & 2 of linkedin exchange token tutorial
+    * https://developer-programs.linkedin.com/documents/exchange-jsapi-tokens-rest-api-oauth-tokens
+    */
+
+
    var oauth2Token = '<token from browser JSAPI: for example: IN.ENV.auth.oauth_token>';
    exchangeTokens(options, oauth2Token, function (err, tokenInfo) {
      // now tokenInfo is the oauth1 token info 
@@ -36,7 +43,7 @@ This module also has a way to make REST API calls to linked in though that can b
      // }
      // You can use this to make rest calls as follows
 
-     tokenInfo.api('/v1/people/~/connections, {}, function (err, info) {
+     tokenInfo.api('/v1/people/~/connections, function (err, info) {
        // boom!
      });
    });
@@ -58,7 +65,7 @@ You can also make REST calls with this API using OAuth1.0 tokens.
    // into the database and want to use it to make REST calls later
 
    exchangeTokens.makeTokenInfo(options, tokenInfo)
-     .api('/v1/people/~/connections', {}, function (err, info) {
+     .api('/v1/people/~/connections', function (err, info) {
         // boom!
      });
 
