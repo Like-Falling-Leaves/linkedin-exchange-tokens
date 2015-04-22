@@ -37,7 +37,7 @@ function exchangeTokens(options, oauth2Token, done) {
 }
 
 function makeTokenInfo(options, tokenInfo) {
-  var token = Object.create(tokenInfo);
+  var token = tokenInfo;
   Object.defineProperty(token, 'api', {
     value: api.bind(token, options, token),
     enumerable: false,
